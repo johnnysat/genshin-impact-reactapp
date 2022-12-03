@@ -1,3 +1,7 @@
+# Genshin Impact - Escolha Aleatória de Personagens
+O projeto envolve "randomizar" a escolha de personagens para as atividades dentro do game Genshin Impact.<br>
+Servirá tanto para tarefas das missões diárias quanto para Abismo e outras atividades no jogo.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
