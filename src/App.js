@@ -8,14 +8,15 @@ import CardCharacter from './components/CardCharacters/CardCharacter';
 class App extends Component {
 
   state= {
-    filmes: [],
+    characters: [],
   }
 
   async componentDidMount() {
     const response = await Api.get('');
-    console.log(response.data);
+    const data = response.data;
+    console.log(data);
 
-    this.setState({ filmes: response.data});
+    this.setState({ characters: data});
   }
 
   render(){
