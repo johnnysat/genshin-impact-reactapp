@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import HeaderBar from './components/HeaderBar'
+import HeaderBar from './components/Header/HeaderBar';
+import CardCharacter from './components/CardCharacters/CardCharacter';
 
 
 function App() {
   return (
     <div className="App">
       <HeaderBar />
-      <h1>Hello World!</h1>
-      <Button variant="link">Link</Button>
+      <body className="mainContent">
+        <CardCharacter />
+
+      </body>
     </div>
   );
 }
