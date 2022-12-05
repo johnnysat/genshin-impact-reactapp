@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import dailymission from '../../images/dailymission.PNG';
 
-function CardCharacter({name, vision, weapon, nation, value, onChange}) {
+function CardCharacter({name, vision, weapon, nation}) {
 
   return (
     <Card style={{ width: '18rem' }}>

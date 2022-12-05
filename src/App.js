@@ -24,7 +24,7 @@ class App extends Component {
     <div className="App">
       <HeaderBar />
       <FormInput 
-      onChange={this.handleChange}
+      onChange={this.state.value}
       />
 
       <div className="cardContent">
