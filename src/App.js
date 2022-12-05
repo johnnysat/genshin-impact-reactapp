@@ -12,20 +12,23 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await Api.get('');
-    const data = response.data;
-    console.log(data);
-
-    this.setState({ characters: data});
+    const response = await Api.get('yoimiya');
+    console.log(response.data)
+    this.setState({ characters: response.data});
   }
 
   render(){
+    const {characters} = this.state;
+
   return (
     <div className="App">
       <HeaderBar />
       <div className="cardContent">
-        <CardCharacter />
-        <CardCharacter />
+        <CardCharacter 
+        name={characters.name}
+        vision={characters.vision}
+        weapon={characters.weapon}
+        nation={characters.nation} />
       </div>
     </div>
   );

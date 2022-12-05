@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-function CardCharacter() {
+function CardCharacter({name, vision, weapon, nation}) {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={dailymission}/>
@@ -28,10 +28,10 @@ function CardCharacter() {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Personagem 1</ListGroup.Item>
-        <ListGroup.Item>Personagem 2</ListGroup.Item>
-        <ListGroup.Item>Personagem 3</ListGroup.Item>
-        <ListGroup.Item>Personagem 4</ListGroup.Item>
+        <ListGroup.Item>{name}</ListGroup.Item>
+        <ListGroup.Item>{vision}</ListGroup.Item>
+        <ListGroup.Item>{weapon}</ListGroup.Item>
+        <ListGroup.Item>{nation}</ListGroup.Item>
       </ListGroup>
     </Card>
   );
