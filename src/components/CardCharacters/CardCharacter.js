@@ -29,10 +29,10 @@ function CardCharacter({name, vision, weapon, nation, value}) {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>{name}</ListGroup.Item>
-        <ListGroup.Item>{vision}</ListGroup.Item>
-        <ListGroup.Item>{weapon}</ListGroup.Item>
-        <ListGroup.Item>{nation}</ListGroup.Item>
+        <ListGroup.Item><strong>Nome</strong>: {name}</ListGroup.Item>
+        <ListGroup.Item><strong>Elemento</strong>: {vision}</ListGroup.Item>
+        <ListGroup.Item><strong>Arma</strong>: {weapon}</ListGroup.Item>
+        <ListGroup.Item><strong>Nação</strong>: {nation}</ListGroup.Item>
       </ListGroup>
     </Card>
   );

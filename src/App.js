@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await Api.get('yoimiya');
+    const response = await Api.get('xinyan');
     this.setState({ characters: response.data});
   }
 
