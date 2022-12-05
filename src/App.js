@@ -13,12 +13,12 @@ class App extends Component {
 
   async componentDidMount() {
     const response = await Api.get('yoimiya');
-    console.log(response.data)
     this.setState({ characters: response.data});
   }
 
   render(){
     const {characters} = this.state;
+    //const input = document.querySelector('.input-characters');
 
   return (
     <div className="App">
