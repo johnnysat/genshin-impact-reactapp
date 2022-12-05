@@ -7,13 +7,13 @@ import CardCharacter from './components/CardCharacters/CardCharacter';
 import FormInput from './components/Form/Form';
 
 class App extends Component {
-
+  
   state= {
     characters: [],
   }
 
   async componentDidMount() {
-    const response = await Api.get(this.state.value);
+    const response = await Api.get('Diluc');
     this.setState({ characters: response.data});
   }
 
@@ -24,7 +24,8 @@ class App extends Component {
     <div className="App">
       <HeaderBar />
       <FormInput 
-      onChange={this.state.value}
+      value={this.state.value}
+      onChange={this.handleChange}
       />
 
       <div className="cardContent">
