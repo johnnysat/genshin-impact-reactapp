@@ -1,36 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-class FormInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    };
+const FormInput = () => {
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  };
+  const [input, setInput] = useState('');
+  
+  const handleChange = (e) => {
+    setInput(e.target.value)
+    console.log(input);
+  }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  };
-
-  handleSubmit(event) {
-    event.preventDefault();
-  };
-
-  render() {
     return (
       <Form.Group className="mb-3 input-characters">
-        <Form type="text" placeholder="Escolha o Personagem" onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-          <input variant="primary" type="submit">
-          </input>
+        <Form type="text" placeholder="Escolha o Personagem">
+          <input type="text" value={input}
+          onChange={(e) => handleChange(e)} />
         </Form>
       </Form.Group>
     );
-  }
 }
 
 export default FormInput;

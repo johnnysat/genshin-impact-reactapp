@@ -1,13 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Api from './Api';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderBar from './components/Header/HeaderBar';
 import CardCharacter from './components/CardCharacters/CardCharacter';
-import FormInput from './components/Form/Form';
+import Form from 'react-bootstrap/Form';
 
-class App extends Component {
-  
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ''
+    };
+  }
+
+  handleChange = event => {
+    event.preventDefault();
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+
   state= {
     characters: [],
   }
@@ -15,6 +29,7 @@ class App extends Component {
   async componentDidMount() {
     const response = await Api.get('Diluc');
     this.setState({ characters: response.data});
+    console.log(response.data)
   }
 
   render(){
@@ -23,17 +38,20 @@ class App extends Component {
   return (
     <div className="App">
       <HeaderBar />
-      <FormInput 
-      value={this.state.value}
-      onChange={this.handleChange}
-      />
+
+      <Form.Group className="mb-3 input-characters">
+        <Form type="text" placeholder="Escolha o Personagem">
+          <input type="text" onChange={this.handleChange}/>
+          <button type="button">Enviar</button>
+        </Form>
+      </Form.Group>
 
       <div className="cardContent">
         <CardCharacter 
-        name={characters.name}
-        vision={characters.vision}
-        weapon={characters.weapon}
-        nation={characters.nation} />
+        name= 'Nome'
+        vision= 'Visão'
+        weapon= 'Arma'
+        nation= 'Nação' />
       </div>
     </div>
   );
