@@ -22,9 +22,9 @@ class App extends React.Component {
     });
   }
 
-  state= {
-    characters: [],
-  }
+  //state= {
+   // characters: [],
+  //}
 
   async componentDidMount() {
     const response = await Api.get('Diluc');
