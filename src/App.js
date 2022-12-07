@@ -11,26 +11,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: '',
+      value: '',
       characters: [],
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = event => {
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    console.log(this.state.value);
     event.preventDefault();
-    this.setState({
-      inputValue: event.target.value
-    });
   }
-
-  //state= {
-   // characters: [],
-  //}
 
   async componentDidMount() {
-    const response = await Api.get('Diluc');
+    const response = await Api.get('Amber');
     this.setState({ characters: response.data});
-    console.log(response.data)
+    console.log(response.data);
   }
 
   render(){
@@ -41,15 +41,15 @@ class App extends React.Component {
       <HeaderBar />
 
       <Form.Group className="mb-3 input-characters">
-        <Form type="text" placeholder="Escolha o Personagem">
-          <input type="text" onChange={this.handleChange}/>
-          <button type="button">Enviar</button>
+        <Form type="text" placeholder="Escolha o Personagem" onSubmit={this.handleSubmit}>
+          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input type="submit" value="Pesquisar"/>
         </Form>
       </Form.Group>
 
       <div className="cardContent">
         <CardCharacter 
-        name= {characters.name}
+        name= {`${characters.name}, ${characters.title}`}
         vision= {characters.vision}
         weapon= {characters.weapon}
         nation= {characters.nation} />
