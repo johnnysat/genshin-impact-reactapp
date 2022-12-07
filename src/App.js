@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await Api.get('Amber');
+    const response = await Api.get('Diluc');
     this.setState({ characters: response.data});
     console.log(response.data);
   }
