@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: ''
+      inputValue: '',
+      characters: [],
     };
   }
 
@@ -33,7 +34,7 @@ class App extends React.Component {
   }
 
   render(){
-    //const {characters} = this.state;
+    const {characters} = this.state;
 
   return (
     <div className="App">
@@ -48,10 +49,10 @@ class App extends React.Component {
 
       <div className="cardContent">
         <CardCharacter 
-        name= 'Nome'
-        vision= 'Visão'
-        weapon= 'Arma'
-        nation= 'Nação' />
+        name= {characters.name}
+        vision= {characters.vision}
+        weapon= {characters.weapon}
+        nation= {characters.nation} />
       </div>
     </div>
   );
