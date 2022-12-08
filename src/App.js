@@ -53,7 +53,14 @@ class App extends React.Component {
         vision= {characters.vision}
         weapon= {characters.weapon}
         nation= {characters.nation} />
+
+        <CardCharacter 
+        name= {`${characters.name}, ${characters.title}`}
+        vision= {characters.vision}
+        weapon= {characters.weapon}
+        nation= {characters.nation} />
       </div>
+      
     </div>
   );
 }
