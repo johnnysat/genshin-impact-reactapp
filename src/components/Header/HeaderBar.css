@@ -1,3 +1,8 @@
+.main_navbar {
+  margin: 0 15%;
+}
+
 .navbar_link {
   justify-content: space-between;
 }
+

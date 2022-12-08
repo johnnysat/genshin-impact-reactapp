@@ -6,7 +6,7 @@ import './HeaderBar.css';
 
 function HeaderBar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="main_navbar">
       <Container>
 
         <Navbar.Brand href="#home">Genshin Impact - Aleatorizador</Navbar.Brand>
