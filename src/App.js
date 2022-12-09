@@ -1,19 +1,21 @@
 import React, {useEffect, useState } from 'react';
-import myApi from './Api';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import myApi from './Api';
 import HeaderBar from './components/Header/HeaderBar';
 import CardCharacter from './components/CardCharacters/CardCharacter';
 import Form from 'react-bootstrap/Form';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function MyComponent(props) {
-  const [, setValue] = useState([]);
+
+
+function ResponseApi({value}) {
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    myApi.get(props.value).then(({ data }) => {
-      setValue(data);
+    myApi.get(value).then(({ data }) => {
+      setCharacters(data);
     });
-  }, [props.value]);
+  }, [value]);
 }
 
 class App extends React.Component {
@@ -54,7 +56,7 @@ class App extends React.Component {
         </form>
       </Form.Group>
 
-      <MyComponent value={this.state.value} />
+      <ResponseApi value={this.state.value} />
       <div className="cardContent">
         <CardCharacter 
           key={characters.name}
