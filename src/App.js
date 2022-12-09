@@ -28,7 +28,6 @@ class App extends React.Component {
   }
 
   handleChange(event) {
-    event.preventDefault();
     this.setState({value: event.target.value});
   }
 
@@ -48,7 +47,9 @@ class App extends React.Component {
 
       <Form.Group className="mb-3 input-characters">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input type="text" 
+            value={this.state.value} 
+            onChange={this.handleChange}/>
           <input type="submit" value="Pesquisar"/>
         </form>
       </Form.Group>
