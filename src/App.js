@@ -1,11 +1,20 @@
-import React, {useEffect, useState, } from 'react';
-import Api from './Api';
+import React, {useEffect, useState } from 'react';
+import myApi from './Api';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderBar from './components/Header/HeaderBar';
 import CardCharacter from './components/CardCharacters/CardCharacter';
 import Form from 'react-bootstrap/Form';
 
+function MyComponent(props) {
+  const [, setValue] = useState([]);
+
+  useEffect(() => {
+    myApi.get(props.value).then(({ data }) => {
+      setValue(data);
+    });
+  }, [props.value]);
+}
 
 class App extends React.Component {
   constructor(props) {
@@ -19,27 +28,15 @@ class App extends React.Component {
   }
 
   handleChange(event) {
+    event.preventDefault();
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
-    console.log(this.state.value);
     event.preventDefault();
-  }
-
-  async componentDidMount(value) {
-    const response = await Api.get(value);
-    this.setState({ characters: response.data});
-    //console.log(response.data);
-  }
-
-  useEffect() {
-    const [value, setValue] = useState([]);
-    
-    Api.get("value").then(({ data }) => {
-      setValue(data);
-    } );
-    console.log(value);
+    myApi.get(this.state.value).then(({ data }) => {
+      this.setState({ characters: data });
+    });
   }
 
   render(){
@@ -50,18 +47,21 @@ class App extends React.Component {
       <HeaderBar />
 
       <Form.Group className="mb-3 input-characters">
-        <Form type="text" placeholder="Escolha o Personagem" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.value} onChange={this.handleChange}/>
           <input type="submit" value="Pesquisar"/>
-        </Form>
+        </form>
       </Form.Group>
 
+      <MyComponent value={this.state.value} />
       <div className="cardContent">
         <CardCharacter 
-        name= {`${characters.name}, ${characters.title}`}
-        vision= {characters.vision}
-        weapon= {characters.weapon}
-        nation= {characters.nation} />
+          key={characters.name}
+          name={`${characters.name}, ${characters.title}`}
+          vision={characters.vision}
+          weapon={characters.weapon}
+          nation={characters.nation}
+        />
       </div>
       
     </div>

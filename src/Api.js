@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const Api = axios.create({
+const myApi = axios.create({
   baseURL: `https://api.genshin.dev/characters/`
 });
 
-export default Api;
+export default myApi;
