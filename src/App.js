@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState, } from 'react';
 import Api from './Api';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,10 +27,19 @@ class App extends React.Component {
     event.preventDefault();
   }
 
-  async componentDidMount() {
-    const response = await Api.get('Diluc');
+  async componentDidMount(value) {
+    const response = await Api.get(value);
     this.setState({ characters: response.data});
-    console.log(response.data);
+    //console.log(response.data);
+  }
+
+  useEffect() {
+    const [value, setValue] = useState([]);
+    
+    Api.get("value").then(({ data }) => {
+      setValue(data);
+    } );
+    console.log(value);
   }
 
   render(){
@@ -48,12 +57,6 @@ class App extends React.Component {
       </Form.Group>
 
       <div className="cardContent">
-        <CardCharacter 
-        name= {`${characters.name}, ${characters.title}`}
-        vision= {characters.vision}
-        weapon= {characters.weapon}
-        nation= {characters.nation} />
-
         <CardCharacter 
         name= {`${characters.name}, ${characters.title}`}
         vision= {characters.vision}
