@@ -1,22 +1,11 @@
-import React, {useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import myApi from './Api';
 import HeaderBar from './components/Header/HeaderBar';
 import CardCharacter from './components/CardCharacters/CardCharacter';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
-function ResponseApi({value}) {
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    myApi.get(value).then(({ data }) => {
-      setCharacters(data);
-    });
-  }, [value]);
-}
+import { Card } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,12 +14,19 @@ class App extends React.Component {
       value: '',
       characters: [],
     };
-    this.handleChange = this.handleChange.bind(this);
+
+    this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.searchAPI = this.searchAPI.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleInput(event) {
+    event.preventDefault();
+    this.setState({ value: event.target.value });
+
+    if (this.timer) {
+      clearTimeout(this.timer)}
+    this.timer = setTimeout(() => this.searchAPI(), 5000);
   }
 
   handleSubmit(event) {
@@ -40,36 +36,38 @@ class App extends React.Component {
     });
   }
 
-  render(){
-    const {characters} = this.state;
+  searchAPI() {
+    myApi.get(this.state.value).then(({ data }) => {
+      this.setState({ characters: data });
+    });
+  }
 
-  return (
-    <div className="App">
-      <HeaderBar />
+  render() {
+    const { characters } = this.state;
 
-      <Form.Group className="mb-3 input-characters">
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" 
-            value={this.state.value} 
-            onChange={this.handleChange}/>
-          <input type="submit" value="Pesquisar"/>
-        </form>
-      </Form.Group>
+    return (
+      <div className="App">
+        <HeaderBar />
 
-      <ResponseApi value={this.state.value} />
-      <div className="cardContent">
-        <CardCharacter 
-          key={characters.name}
-          name={`${characters.name}, ${characters.title}`}
-          vision={characters.vision}
-          weapon={characters.weapon}
-          nation={characters.nation}
-        />
+        <Form.Group className="mb-3 input-characters">
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" value={this.state.value} onInput={this.handleInput} />
+            <input type="submit" value="Pesquisar" />
+          </form>
+        </Form.Group>
+
+        <div className="cardContent">
+          <CardCharacter
+            key={characters.name}
+            name={characters.name}
+            vision={characters.vision}
+            weapon={characters.weapon}
+            nation={characters.nation}
+          />
+        </div>
       </div>
-      
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default App;

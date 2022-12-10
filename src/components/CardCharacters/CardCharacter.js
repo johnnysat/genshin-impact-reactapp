@@ -9,10 +9,9 @@ function CardCharacter({name, vision, weapon, nation}) {
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={dailymission}/>
       <Card.Body>   
-        <Card.Title>Missões Diárias</Card.Title>
+        <Card.Title>GenshinDex</Card.Title>
         <Card.Text>
-          Quer um desafio extra nas missões diárias de hoje? Utilize personagens de forma aleatória 
-          para completar o desafio.
+          Pesquise pelo seu personagem aqui!
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
