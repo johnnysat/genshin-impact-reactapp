@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import img from '../../images/dailymission.PNG';
+
 
 function CardCharacter({name, vision, weapon, nation}) {
+  const [filename, setFilename] = useState(name);
 
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={img}/>
+      <LazyLoadImage variant="top" src={require(`../../images/${filename}.png`)} alt={name} />
       <Card.Body>   
         <Card.Title>GenshinDex</Card.Title>
         <Card.Text>

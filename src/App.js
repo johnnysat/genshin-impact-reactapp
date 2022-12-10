@@ -6,6 +6,7 @@ import CardCharacter from './components/CardCharacters/CardCharacter';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,7 @@ class App extends React.Component {
 
     if (this.timer) {
       clearTimeout(this.timer)}
-    this.timer = setTimeout(() => this.searchAPI(), 5000);
+    this.timer = setTimeout(() => this.searchAPI(), 3000);
   }
 
   handleSubmit(event) {
@@ -34,6 +35,7 @@ class App extends React.Component {
       this.setState({ characters: data });
     });
   }
+
 
   searchAPI() {
     myApi.get(this.state.value).then(({ data }) => {
@@ -57,6 +59,7 @@ class App extends React.Component {
 
         <div className="cardContent">
           <CardCharacter
+            img={`./images/diluc.png`}
             key={characters.name}
             name={characters.name}
             vision={characters.vision}
