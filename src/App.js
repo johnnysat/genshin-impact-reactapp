@@ -26,7 +26,7 @@ class App extends React.Component {
 
     if (this.timer) {
       clearTimeout(this.timer)}
-    this.timer = setTimeout(() => this.searchAPI(), 3000);
+    this.timer = setTimeout(() => this.searchAPI(), 100000);
   }
 
   handleSubmit(event) {
@@ -34,6 +34,8 @@ class App extends React.Component {
     myApi.get(this.state.value).then(({ data }) => {
       this.setState({ characters: data });
     });
+    this.setState({value: ''});
+
   }
 
 
