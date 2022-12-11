@@ -8,9 +8,11 @@ O projeto irá continuar vivo para que novas funções possam ser habilitadas e 
 - Bootstrap React. 
 - Axios API (consumindo API da https://github.com/genshindev/api)
 
-## Imagem do Projeto em Funcionamento
+## Projeto em Funcionamento
 Caso queira ver o projeto rodando em deploy, ele está disponível na netlify através do 
 <a href="https://genshin-impact-reactapp.netlify.app">link</a>
+
+### Imagem do Projeto
 <div align="center">
 <img src="./src/images/genshin%20project.gif" alt="Gif do Projeto em funcionamento">
 </div>
