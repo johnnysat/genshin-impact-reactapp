@@ -9,7 +9,9 @@ O projeto irá continuar vivo para que novas funções possam ser habilitadas e 
 - Axios API (consumindo API da https://github.com/genshindev/api)
 
 ## Imagem do Projeto em Funcionamento
+<div align="center">
 <img src="./src/images/genshin%20project.gif" alt="Gif do Projeto em funcionamento">
+</div>
 
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
