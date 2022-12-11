@@ -9,13 +9,14 @@ function CardCharacter({name, vision, weapon, nation, input}) {
 
   return (
     <Card style={{ width: '18rem' }}>
+      <div className="container">
       <Card.Img variant="top" 
       src={require(`../../images/${filename}.png`)} 
       alt={name} 
       className="imgChar"/>
+      </div>
       <Card.Body>   
         <Card.Title>
-          GenshinDéx!
           <div className="inputName">{input}</div>
         </Card.Title>
       </Card.Body>

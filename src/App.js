@@ -42,7 +42,6 @@ class App extends React.Component {
     myApi.get(this.state.value).then(({ data }) => {
       const charactersLowercase = data.map(character => character.toLowerCase());
       this.setState({ characters: charactersLowercase });
-      console.log(this.state.value);
     });
   }
 

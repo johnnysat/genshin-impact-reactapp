@@ -1,9 +1,14 @@
+
 .inputName{
   margin-top: 10px;
 }
 
+.container {
+  padding: 0px !important;
+}
+
 .imgChar {
+  padding: 0px;
   max-width: 100%;
-  min-width: 285px;
-  object-fit: contain;
+  min-width: 280px;
 }
