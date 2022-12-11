@@ -40,7 +40,8 @@ class App extends React.Component {
 
   searchAPI() {
     myApi.get(this.state.value).then(({ data }) => {
-      this.setState({ characters: data });
+      const charactersLowercase = data.map(character => character.toLowerCase());
+      this.setState({ characters: charactersLowercase });
     });
   }
 
