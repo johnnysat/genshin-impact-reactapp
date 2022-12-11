@@ -61,7 +61,6 @@ class App extends React.Component {
 
         <div className="cardContent">
           <CardCharacter
-            img={`./images/diluc.png`}
             key={characters.name}
             name={characters.name}
             vision={characters.vision}
