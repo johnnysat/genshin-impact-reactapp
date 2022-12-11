@@ -34,9 +34,7 @@ class App extends React.Component {
       this.setState({ characters: data });
     });
     this.setState({value: ''});
-
   }
-
 
   searchAPI() {
     myApi.get(this.state.value).then(({ data }) => {
