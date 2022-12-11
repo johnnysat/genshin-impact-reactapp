@@ -12,7 +12,7 @@ O projeto irá continuar vivo para que novas funções possam ser habilitadas e 
 Caso queira ver o projeto rodando em deploy, ele está disponível na netlify através do 
 <a href="https://genshin-impact-reactapp.netlify.app">link</a>
 
-### Imagem do Projeto
+## Imagem do Projeto
 <div align="center">
 <img src="./src/images/genshin%20project.gif" alt="Gif do Projeto em funcionamento">
 </div>
