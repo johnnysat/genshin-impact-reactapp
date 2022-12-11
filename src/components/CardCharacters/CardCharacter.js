@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import './CardCharacter.css';
 
 
-function CardCharacter({name, vision, weapon, nation}) {
+function CardCharacter({name, vision, weapon, nation, input}) {
   const [filename] = useState(name);
 
   return (
     <Card style={{ width: '18rem' }}>
-      <LazyLoadImage variant="top" src={require(`../../images/${filename}.png`)} alt={name} />
+      <Card.Img variant="top" 
+      src={require(`../../images/${filename}.png`)} 
+      alt={name} 
+      className="imgChar"/>
       <Card.Body>   
-        <Card.Title>GenshinDex</Card.Title>
-        <Card.Text>
-          Pesquise pelo seu personagem aqui!
-        </Card.Text>
+        <Card.Title>
+          GenshinDéx!
+          <div className="inputName">{input}</div>
+        </Card.Title>
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item><strong>Nome</strong>: {name}</ListGroup.Item>

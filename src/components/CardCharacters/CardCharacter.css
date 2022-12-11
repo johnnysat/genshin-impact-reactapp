@@ -1,0 +1,8 @@
+.inputName{
+  margin-top: 10px;
+}
+
+.imgChar {
+  max-width: 100%;
+  object-fit: contain;
+}

@@ -3,7 +3,6 @@ import './App.css';
 import myApi from './Api';
 import HeaderBar from './components/Header/HeaderBar';
 import CardCharacter from './components/CardCharacters/CardCharacter';
-import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -52,15 +51,19 @@ class App extends React.Component {
       <div className="App">
         <HeaderBar />
 
-        <Form.Group className="mb-3 input-characters">
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.value} onInput={this.handleInput} />
-            <input type="submit" value="Pesquisar" />
-          </form>
-        </Form.Group>
 
         <div className="cardContent">
           <CardCharacter
+            input={
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" 
+              className="inputChar"
+              value={this.state.value} 
+              onInput={this.handleInput}
+              placeholder={'Nome do personagem'}
+              />
+            </form>
+          }
             key={characters.name}
             name={characters.name}
             vision={characters.vision}

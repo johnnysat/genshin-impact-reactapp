@@ -1,20 +1,19 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import './HeaderBar.css';
+
 
 function HeaderBar() {
   return (
-    <Navbar bg="light" expand="lg" className="main_navbar">
+    <Navbar>
       <Container>
-
-        <Navbar.Brand href="#home">Genshin Impact - Aleatorizador</Navbar.Brand>
-          <Nav className="navbar_link">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
-
+        <Navbar.Brand href="#home">Genshin Déx</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text>
+            Feito por: <a href="https://github.com/johnnysat">JohnnySat</a>
+          </Navbar.Text>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

@@ -11,3 +11,19 @@
   justify-content: space-around;
   padding: 10px;
 }
+
+.inputChar {
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 0; 
+  border: 1px solid #cecece; 
+}
+
+.inputChar::placeholder {
+  font-size: 15px;
+  text-align: center;
+}
+
+
+
+
