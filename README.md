@@ -1,7 +1,8 @@
-# Genshin Impact - Escolha Aleatória de Personagens
-O projeto envolve "randomizar" a escolha de personagens para as atividades dentro do game Genshin Impact.<br>
-Servirá tanto para tarefas das missões diárias quanto para Abismo e outras atividades no jogo.
-
+# Genshin Impact - Base de Dados de Personagem
+Originalmente planejado para ser um randomizador com os personagens de Genshin Impact para servir de 
+auxílio em efetuar as atividades diária com personagens aleatórios, o projeto foi alterado para ser
+uma espécie de "Pokedex" com os personagens de Genshin.<br>
+O projeto irá continuar vivo para que novas funções possam ser habilitadas e adicionadas futuramente.
 ## Projeto desenvolvido com as seguintes tecnologias: 
 - React Javascript. 
 - Bootstrap React. 
