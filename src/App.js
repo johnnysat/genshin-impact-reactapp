@@ -51,20 +51,19 @@ class App extends React.Component {
     return (
       <div className="App">
         <HeaderBar />
-
-
         <div className="cardContent">
           <CardCharacter
             input={
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" 
-              className="inputChar"
-              value={this.state.value} 
-              onInput={this.handleInput}
-              placeholder={'Nome do personagem'}
-              />
-            </form>
-          }
+              <form onSubmit={this.handleSubmit}>
+                <input
+                  type="text"
+                  className="inputChar"
+                  value={this.state.value}
+                  onInput={this.handleInput}
+                  placeholder={"Nome do personagem"}
+                />
+              </form>
+            }
             key={characters.name}
             name={characters.name}
             vision={characters.vision}
@@ -72,8 +71,11 @@ class App extends React.Component {
             nation={characters.nation}
           />
         </div>
+
       </div>
+
     );
+    
   }
 }
 

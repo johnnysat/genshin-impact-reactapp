@@ -1,7 +1,11 @@
+ @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Roboto+Mono:wght@200;400&display=swap'); 
+
 .App {
   text-align: center;
   width: 80%;
-  margin-left: 10%;
+  width: auto;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .cardContent {
@@ -17,6 +21,8 @@
   width: 100%;
   padding: 5px 0; 
   border: 1px solid #cecece; 
+  text-align: center;
+  caret-color: transparent;
 }
 
 .inputChar::placeholder {
