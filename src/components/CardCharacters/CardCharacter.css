@@ -4,5 +4,6 @@
 
 .imgChar {
   max-width: 100%;
+  min-width: 285px;
   object-fit: contain;
 }
