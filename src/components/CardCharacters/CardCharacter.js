@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 
 function CardCharacter({name, vision, weapon, nation}) {
-  const [filename, ] = useState(name);
+  const [filename] = useState(name);
 
   return (
     <Card style={{ width: '18rem' }}>
