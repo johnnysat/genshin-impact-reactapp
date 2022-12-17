@@ -69,8 +69,9 @@ class App extends React.Component {
             weapon={characters.weapon}
             nation={characters.nation}
           />
+          <ListCharacter/>
         </div>
-            <ListCharacter/>
+            
       </div>
 
     );
