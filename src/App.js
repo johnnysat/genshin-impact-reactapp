@@ -3,6 +3,7 @@ import './App.css';
 import myApi from './Api';
 import HeaderBar from './components/Header/HeaderBar';
 import CardCharacter from './components/CardCharacters/CardCharacter';
+import ListCharacter from './components/ListCharacters/ListCharacter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -69,7 +70,7 @@ class App extends React.Component {
             nation={characters.nation}
           />
         </div>
-
+            <ListCharacter/>
       </div>
 
     );
