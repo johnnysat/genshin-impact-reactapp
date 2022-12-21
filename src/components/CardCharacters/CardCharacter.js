@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './CardCharacter.css';
+//import ListCharacter from '../ListCharacters/ListCharacter';
+
 
 
 function CardCharacter({name, vision, weapon, nation, input}) {

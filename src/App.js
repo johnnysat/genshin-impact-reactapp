@@ -69,6 +69,7 @@ class App extends React.Component {
             nation={characters.nation}
           />
           <ListCharacter/>
+          
         </div>
             
       </div>
